@@ -30,6 +30,7 @@ make %{?_smp_mflags}
 
 
 %files
+%license COPYING
 %defattr(-,root,root,-)
 %{_includedir}/X11/fonts/*.h
 %{_datadir}/pkgconfig/*.pc
