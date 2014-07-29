@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           fontsproto
 Version:        2.1.2
 Release:        1
@@ -11,6 +13,10 @@ Source1001: 	fontsproto.manifest
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(xorg-macros)
 
+%if !%{with x}
+ExclusiveArch:
+%endif
+
 %description
 %{summary}.
 
@@ -19,7 +25,7 @@ BuildRequires:  pkgconfig(xorg-macros)
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-static \
+%autogen --disable-static \
              --libdir=%{_datadir} \
              --without-xmlto
 
