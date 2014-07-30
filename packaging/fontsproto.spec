@@ -1,5 +1,7 @@
+%bcond_with x
+
 Name:           fontsproto
-Version:        2.1.2
+Version:        2.1.3
 Release:        1
 License:        MIT
 Summary:        X
@@ -19,7 +21,7 @@ BuildRequires:  pkgconfig(xorg-macros)
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-static \
+%autogen --disable-static \
              --libdir=%{_datadir} \
              --without-xmlto
 
